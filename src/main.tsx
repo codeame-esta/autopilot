@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Router from './router/router.tsx';
+import './i18n';
 
 const queryClient = new QueryClient();
 
