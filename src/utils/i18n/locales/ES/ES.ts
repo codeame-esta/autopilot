@@ -67,7 +67,7 @@ export const SpanishLanguage = {
             SUB_TITLE: 'Reciba notificaciones en su dispositivo'
           },
           EMAIL: {
-            TITLE: 'NotificacionesEmail',
+            TITLE: 'Notificaciones Email',
             SUB_TITLE: 'Reciba resúmenes semanales por correo electrónico'
           },
           ANOMALY: {
