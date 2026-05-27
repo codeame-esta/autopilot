@@ -13,18 +13,18 @@ export default function NotificationsCard() {
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base">
                     <Bell className="h-5 w-5" />
-                    Notifications
+                    {t('PAGES.SETTINGS.NOTIFICATIONS.TITLE')}
                 </CardTitle>
                 <CardDescription>
-                    Configure how you receive notifications
+                    {t('PAGES.SETTINGS.NOTIFICATIONS.SUB_TITLE')}
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                        <p className="font-medium">Push notifications</p>
+                        <p className="font-medium">{t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.PUSH.TITLE')}</p>
                         <p className="text-sm text-muted-foreground">
-                            Receive notifications on your device
+                            {t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.PUSH.SUB_TITLE')}
                         </p>
                     </div>
                     <Switch defaultChecked />
@@ -32,9 +32,9 @@ export default function NotificationsCard() {
                 <Separator />
                 <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                        <p className="font-medium">Email notifications</p>
+                        <p className="font-medium">{t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.EMAIL.TITLE')}</p>
                         <p className="text-sm text-muted-foreground">
-                            Receive weekly summaries via email
+                            {t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.EMAIL.SUB_TITLE')}
                         </p>
                     </div>
                     <Switch defaultChecked />
@@ -42,9 +42,9 @@ export default function NotificationsCard() {
                 <Separator />
                 <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                        <p className="font-medium">Anomaly alerts</p>
+                        <p className="font-medium">{t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.ANOMALY.TITLE')}</p>
                         <p className="text-sm text-muted-foreground">
-                            Get notified when unusual activity is detected
+                            {t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.ANOMALY.SUB_TITLE')}
                         </p>
                     </div>
                     <Switch defaultChecked />
@@ -52,9 +52,9 @@ export default function NotificationsCard() {
                 <Separator />
                 <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                        <p className="font-medium">Goal reminders</p>
+                        <p className="font-medium">{t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.GOAL.TITLE')}</p>
                         <p className="text-sm text-muted-foreground">
-                            Receive updates on your savings goals
+                            {t('PAGES.SETTINGS.NOTIFICATIONS.FIELDS.GOAL.SUB_TITLE')}
                         </p>
                     </div>
                     <Switch defaultChecked />

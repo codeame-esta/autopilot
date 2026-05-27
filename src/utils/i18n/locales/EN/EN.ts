@@ -59,7 +59,28 @@ export const EnglishLanguage = {
           }
         },
       },
-
+      NOTIFICATIONS: {
+        TITLE: 'Notifications',
+        SUB_TITLE: 'Configure how you receive notifications',
+        FIELDS: {
+          PUSH: {
+            TITLE: 'Push notifications',
+            SUB_TITLE: 'Receive notifications on your device'
+          },
+          EMAIL: {
+            TITLE: 'Email notifications',
+            SUB_TITLE: 'Receive weekly summaries via email'
+          },
+          ANOMALY: {
+            TITLE: 'Anomaly alerts',
+            SUB_TITLE: 'Get notified when unusual activity is detected'
+          },
+          GOAL: {
+            TITLE: 'Goal reminders',
+            SUB_TITLE: 'Receive updates on your savings goals'
+          }
+        }
+      }
     },
   },
 };
