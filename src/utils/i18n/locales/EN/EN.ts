@@ -26,7 +26,40 @@ export const EnglishLanguage = {
       TITLE: 'Settings',
       DESCRIPTION: 'Manage your account and preferences',
       PERSONAL_INFO: 'Personal Information',
-      PROFILE: 'Profile',
+      PROFILE: {
+        TITLE: 'Profile',
+        CHANGE_PHOTO: 'Change Photo',
+        FIELDS: {
+          FULL_NAME: {
+            LABEL: 'Full name',
+          },
+          EMAIL: {
+            LABEL: 'Email',
+          }
+        },
+        SUBMIT_BUTTON: 'Save changes'
+      },
+      APPEARANCE: {
+        TITLE: 'Appearance',
+        SUB_TITLE: 'Customize language and theme settings',
+        FIELDS: {
+          LANGUAGE: {
+            LABEL: 'Language',
+            HELPER_TEXT: 'Select your preferred language for the interface',
+            PLACEHOLDER: 'Select language'
+          },
+          THEME: {
+            LABEL: 'Theme',
+            OPTIONS: {
+              DARK: 'Dark',
+              LIGHT: 'Light',
+              SYSTEM: 'System'
+            },
+            HELPER_TEXT: 'Choose how Autopilot looks to you'
+          }
+        },
+      },
+
     },
   },
 };

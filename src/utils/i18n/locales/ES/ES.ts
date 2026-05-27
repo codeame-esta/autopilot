@@ -26,7 +26,38 @@ export const SpanishLanguage = {
       TITLE: 'Configuración',
       DESCRIPTION: 'Administra tu cuenta y preferencias',
       PERSONAL_INFO: 'Información Personal',
-      PROFILE: 'Perfil',
+      PROFILE: {
+        TITLE: 'Perfil',
+        CHANGE_PHOTO: 'Cambiar foto',
+        FIELDS: {
+          FULL_NAME: {
+            LABEL: 'Nombre completo',
+          },
+          EMAIL: {
+            LABEL: 'Correo electrónico',
+          }
+        },
+        SUBMIT_BUTTON: 'Guardar cambios'
+      },
+      APPEARANCE: {
+        TITLE: 'Apariencia',
+        SUB_TITLE: 'Personaliza la configuración de idioma y tema',
+        FIELDS: {
+          LANGUAGE: {
+            LABEL: 'Lenguaje',
+            HELPER_TEXT: 'Seleccione su idioma preferido para la interfaz'
+          },
+          THEME: {
+            LABEL: 'Tema',
+            OPTIONS: {
+              DARK: 'Oscuro',
+              LIGHT: 'Claro',
+              SYSTEM: 'Sistema'
+            },
+            HELPER_TEXT: 'Elige cómo quieres que se vea Autopilot'
+          }
+        },
+      }
     },
   },
 };
