@@ -1,5 +1,5 @@
-import axios from 'axios';
-import type { Endpoint } from './api-contract';
+import axios from "axios";
+import type { Endpoint } from "./api-contract";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
@@ -26,7 +26,7 @@ export async function request<
   TResponse,
 >(
   endpoint: Endpoint<TParams, TQuery, TBody, TResponse>,
-  config?: RequestConfig<TParams, TQuery, TBody>
+  config?: RequestConfig<TParams, TQuery, TBody>,
 ): Promise<TResponse> {
   const url = buildUrl(endpoint.path, config?.params);
 

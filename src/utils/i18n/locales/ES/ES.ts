@@ -57,7 +57,35 @@ export const SpanishLanguage = {
             HELPER_TEXT: 'Elige cómo quieres que se vea Autopilot'
           }
         },
+      },
+      NOTIFICATIONS: {
+        TITLE: 'Notificaciones',
+        SUB_TITLE: 'Configura cómo recibes las notificaciones',
+        FIELDS: {
+          PUSH: {
+            TITLE: 'Notificaciones Push',
+            SUB_TITLE: 'Reciba notificaciones en su dispositivo'
+          },
+          EMAIL: {
+            TITLE: 'Notificaciones Email',
+            SUB_TITLE: 'Reciba resúmenes semanales por correo electrónico'
+          },
+          ANOMALY: {
+            TITLE: 'Alertas de anomalías',
+            SUB_TITLE: 'Reciba notificaciones cuando se detecte actividad inusual'
+          },
+          GOAL: {
+            TITLE: 'Recordatorios de objetivos',
+            SUB_TITLE: 'Recibe actualizaciones sobre sus objetivos de ahorro'
+          }
+        }
+      },
+      AUTOPILOT_SETTINGS: {
+        TITLE: 'Autopilot Settings',
+        SUB_TITLE: 'Configure AI automation preferences',
+
       }
+
     },
   },
 };
