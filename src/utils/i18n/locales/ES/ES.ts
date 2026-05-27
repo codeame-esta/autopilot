@@ -79,7 +79,13 @@ export const SpanishLanguage = {
             SUB_TITLE: 'Recibe actualizaciones sobre sus objetivos de ahorro'
           }
         }
+      },
+      AUTOPILOT_SETTINGS: {
+        TITLE: 'Autopilot Settings',
+        SUB_TITLE: 'Configure AI automation preferences',
+
       }
+
     },
   },
 };
