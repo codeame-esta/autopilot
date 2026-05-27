@@ -3,7 +3,7 @@ import type { Endpoint } from './api-contract';
 import { request, type RequestConfig } from './api-client';
 
 export function createQueryHook<
-  TParams extends Record<string, any> | undefined,
+  TParams extends Record<string, string> | undefined,
   TQuery,
   TBody,
   TResponse,
@@ -16,7 +16,7 @@ export function createQueryHook<
 }
 
 export function createMutationHook<
-  TParams extends Record<string, any> | undefined,
+  TParams extends Record<string, string> | undefined,
   TQuery,
   TBody,
   TResponse,
