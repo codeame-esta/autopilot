@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router";
 import AutopilotLogo from "@/assets/autopilot-logo.png";
+import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png.png";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/lib/supabase";
 
@@ -63,11 +64,20 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col bg-sidebar text-sidebar-foreground">
+    <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
       <div className="flex h-16 items-center gap-2 px-6 py-14">
         <div className="flex items-center gap-3">
-          <img className="w-10 h-10" src={AutopilotLogo} alt="Autopilot Logo" />
-          <span className={cn("font-semibold tracking-wider text-xl text-white")}>AUTOPILOT</span>
+          <img className="w-10 h-10 hidden dark:block" src={AutopilotLogo} alt="Autopilot Logo" />
+          <img
+            className="w-10 h-10 block dark:hidden"
+            src={AutopilotLogoBlack}
+            alt="Autopilot Logo"
+          />
+          <span
+            className={cn("font-semibold tracking-wider text-xl text-foreground dark:text-white")}
+          >
+            AUTOPILOT
+          </span>
         </div>
       </div>
 
@@ -84,8 +94,8 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                  : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground",
+                  ? "bg-primary text-primary-foreground"
+                  : "text-foreground/60 dark:text-sidebar-foreground/70 hover:bg-muted dark:hover:bg-sidebar-accent hover:text-foreground dark:hover:text-sidebar-foreground",
               )}
             >
               <item.icon className="h-5 w-5" />
@@ -95,10 +105,10 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="border-t border-sidebar-border p-3">
+      <div className="border-t border-border dark:border-sidebar-border p-3">
         <button
           onClick={handleLogout}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground"
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/60 dark:text-sidebar-foreground/70 transition-colors hover:bg-muted dark:hover:bg-sidebar-accent hover:text-foreground dark:hover:text-sidebar-foreground"
         >
           <LogOut className="h-5 w-5" />
           {t("COMPONENTS.COMMON.SIDEBAR.LOG_OUT")}
