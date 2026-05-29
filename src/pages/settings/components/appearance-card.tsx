@@ -11,13 +11,17 @@ import { Separator } from "@/components/ui/separator";
 import i18n from "@/i18n";
 
 import { Globe, Monitor, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
 
 export default function AppearanceCard() {
   const { t } = useTranslation();
+  const { theme, setTheme } = useTheme();
+
   const handleChangeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
+
   return (
     <Card className="bg-card">
       <CardHeader>
@@ -51,7 +55,12 @@ export default function AppearanceCard() {
           <div className="grid grid-cols-3 gap-3">
             <button
               type="button"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg border-2 border-primary bg-primary/5 transition-colors hover:bg-primary/10"
+              onClick={() => setTheme("dark")}
+              className={`flex flex-col items-center gap-2 p-4 rounded-lg border-2 transition-colors ${
+                theme === "dark"
+                  ? "border-primary bg-primary/5 hover:bg-primary/10"
+                  : "border-border hover:border-primary/50 hover:bg-muted/50"
+              }`}
             >
               <div className="h-10 w-10 rounded-full bg-sidebar flex items-center justify-center">
                 <Moon className="h-5 w-5 text-sidebar-foreground" />
@@ -62,7 +71,12 @@ export default function AppearanceCard() {
             </button>
             <button
               type="button"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border transition-colors hover:border-primary/50 hover:bg-muted/50"
+              onClick={() => setTheme("light")}
+              className={`flex flex-col items-center gap-2 p-4 rounded-lg border-2 transition-colors ${
+                theme === "light"
+                  ? "border-primary bg-primary/5 hover:bg-primary/10"
+                  : "border-border hover:border-primary/50 hover:bg-muted/50"
+              }`}
             >
               <div className="h-10 w-10 rounded-full bg-white border flex items-center justify-center">
                 <Sun className="h-5 w-5 text-amber-500" />
@@ -73,7 +87,12 @@ export default function AppearanceCard() {
             </button>
             <button
               type="button"
-              className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border transition-colors hover:border-primary/50 hover:bg-muted/50"
+              onClick={() => setTheme("system")}
+              className={`flex flex-col items-center gap-2 p-4 rounded-lg border-2 transition-colors ${
+                theme === "system"
+                  ? "border-primary bg-primary/5 hover:bg-primary/10"
+                  : "border-border hover:border-primary/50 hover:bg-muted/50"
+              }`}
             >
               <div className="h-10 w-10 rounded-full bg-gradient-to-br from-white to-sidebar flex items-center justify-center">
                 <Monitor className="h-5 w-5 text-foreground" />

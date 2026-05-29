@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -68,7 +68,7 @@
   --chart-3: #f2f4f7;
   --chart-4: #94a3b8;
   --chart-5: #64748b;
-  --sidebar: #0b0f1a;
+  --sidebar: #111827;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #2563ff;
   --sidebar-primary-foreground: #ffffff;
@@ -83,8 +83,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Sora', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-sans: "Sora", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -128,35 +128,35 @@
 }
 
 @font-face {
-  font-family: 'Sora';
+  font-family: "Sora";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/src/assets/fonts/Sora-Regular.ttf') format('truetype');
+  src: url("/src/assets/fonts/Sora-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Sora';
+  font-family: "Sora";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/src/assets/fonts/Sora-Medium.ttf') format('truetype');
+  src: url("/src/assets/fonts/Sora-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Sora';
+  font-family: "Sora";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/src/assets/fonts/Sora-SemiBold.ttf') format('truetype');
+  src: url("/src/assets/fonts/Sora-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Sora';
+  font-family: "Sora";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/src/assets/fonts/Sora-Bold.ttf') format('truetype');
+  src: url("/src/assets/fonts/Sora-Bold.ttf") format("truetype");
 }
 
 @layer base {
