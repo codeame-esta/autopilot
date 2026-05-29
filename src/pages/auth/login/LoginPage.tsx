@@ -1,24 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
-import { useState } from "react";
 
 export default function LoginPage() {
-  const [isLoading, setIsLoading] = useState(false);
   const handleLogin = async () => {
-    setIsLoading(true);
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/dashboard`,
+        redirectTo: import.meta.env.VITE_FRONTEND_CLIENT_URL,
       },
     });
-    setIsLoading(false);
   };
   return (
     <div>
-      <Button onClick={handleLogin} disabled={isLoading}>
-        {isLoading ? "Loading..." : "Login with Google"}
-      </Button>
+      <Button onClick={handleLogin}>Login with Google</Button>
     </div>
   );
 }
