@@ -100,7 +100,7 @@ export function CashFlowChart() {
                   borderColor: "var(--border)",
                   borderRadius: "8px",
                 }}
-                formatter={(value: number) => [`$${value.toLocaleString()}`, ""]}
+                formatter={(value) => [`$${Number(value).toLocaleString()}`, ""]}
               />
               <Area
                 type="monotone"
