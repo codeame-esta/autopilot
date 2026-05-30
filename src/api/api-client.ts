@@ -1,4 +1,5 @@
 import axios from "axios";
+import { supabase } from "@/lib/supabase";
 import type { Endpoint } from "./api-contract";
 
 const api = axios.create({
@@ -30,11 +31,23 @@ export async function request<
 ): Promise<TResponse> {
   const url = buildUrl(endpoint.path, config?.params);
 
+  let authHeaders: Record<string, string> = {};
+
+  if (endpoint.requiresAuth) {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    if (session?.access_token) {
+      authHeaders = { Authorization: `Bearer ${session.access_token}` };
+    }
+  }
+
   const response = await api.request<TResponse>({
     method: endpoint.method,
     url,
     params: config?.query,
     data: config?.body,
+    headers: authHeaders,
   });
 
   return response.data;

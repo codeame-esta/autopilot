@@ -4,12 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTranslation } from "react-i18next";
 
-interface DashboardHeaderProps {
+type DashboardHeaderProps = {
   userName?: string;
   loading?: boolean;
-}
+  profilePicture?: string;
+};
 
-export function DashboardHeader({ userName = "Ignacio", loading = false }: DashboardHeaderProps) {
+export function DashboardHeader({
+  userName,
+  loading = false,
+  profilePicture,
+}: DashboardHeaderProps) {
   const { t } = useTranslation();
   const hour = new Date().getHours();
   const greeting =
@@ -43,12 +48,12 @@ export function DashboardHeader({ userName = "Ignacio", loading = false }: Dashb
           <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-primary" />
         </Button>
         {loading ? (
-          <Skeleton className="h-10 w-10 rounded-full" />
+          <Skeleton className="h-8 w-8 rounded-full" />
         ) : (
           <Avatar>
-            <AvatarImage src="/avatar.jpg" alt={userName} />
+            <AvatarImage src={profilePicture} alt={userName} />
             <AvatarFallback className="bg-primary text-primary-foreground">
-              {userName.charAt(0)}
+              {userName?.charAt(0)}
             </AvatarFallback>
           </Avatar>
         )}

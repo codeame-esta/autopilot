@@ -22,6 +22,26 @@ export const SpanishLanguage = {
       GOOD_AFTERNOON: "¡Buenas tardes, {{user}}!",
       GOOD_EVENING: "¡Buenas noches, {{user}}!",
     },
+    INSIGHTS: {
+      TITLE: "Perspectivas",
+      DESCRIPTION: "Análisis de tus finanzas impulsados por IA",
+    },
+    ACTIONS: {
+      TITLE: "Acciones",
+      DESCRIPTION: "Acciones automatizadas ejecutadas por tu autopilot",
+    },
+    TRANSACTIONS: {
+      TITLE: "Transacciones",
+      DESCRIPTION: "Visualiza y gestiona tu historial de transacciones",
+    },
+    BUDGETS: {
+      TITLE: "Presupuestos",
+      DESCRIPTION: "Controla y administra tus presupuestos de gasto",
+    },
+    GOALS: {
+      TITLE: "Metas",
+      DESCRIPTION: "Establece y sigue el progreso de tus metas financieras",
+    },
     SETTINGS: {
       TITLE: "Configuración",
       DESCRIPTION: "Administra tu cuenta y preferencias",
@@ -62,17 +82,9 @@ export const SpanishLanguage = {
         TITLE: "Notificaciones",
         SUB_TITLE: "Configura cómo recibes las notificaciones",
         FIELDS: {
-          PUSH: {
-            TITLE: "Notificaciones Push",
-            SUB_TITLE: "Reciba notificaciones en su dispositivo",
-          },
           EMAIL: {
             TITLE: "Notificaciones Email",
             SUB_TITLE: "Reciba resúmenes semanales por correo electrónico",
-          },
-          ANOMALY: {
-            TITLE: "Alertas de anomalías",
-            SUB_TITLE: "Reciba notificaciones cuando se detecte actividad inusual",
           },
           GOAL: {
             TITLE: "Recordatorios de objetivos",

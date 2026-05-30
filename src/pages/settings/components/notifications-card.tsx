@@ -18,29 +18,9 @@ export default function NotificationsCard() {
       <CardContent className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
-            <p className="font-medium">{t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.PUSH.TITLE")}</p>
-            <p className="text-sm text-muted-foreground">
-              {t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.PUSH.SUB_TITLE")}
-            </p>
-          </div>
-          <Switch defaultChecked />
-        </div>
-        <Separator />
-        <div className="flex items-center justify-between">
-          <div className="space-y-0.5">
             <p className="font-medium">{t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.EMAIL.TITLE")}</p>
             <p className="text-sm text-muted-foreground">
               {t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.EMAIL.SUB_TITLE")}
-            </p>
-          </div>
-          <Switch defaultChecked />
-        </div>
-        <Separator />
-        <div className="flex items-center justify-between">
-          <div className="space-y-0.5">
-            <p className="font-medium">{t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.ANOMALY.TITLE")}</p>
-            <p className="text-sm text-muted-foreground">
-              {t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.ANOMALY.SUB_TITLE")}
             </p>
           </div>
           <Switch defaultChecked />
