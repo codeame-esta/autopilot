@@ -191,7 +191,7 @@ interface AuthLayoutProps {
 
 export function AuthLayout({ children }: AuthLayoutProps) {
   return (
-    <div className="relative min-h-screen bg-background dark:bg-sidebar overflow-hidden">
+    <div className="relative min-h-screen bg-background overflow-hidden">
       <WaveMesh />
 
       <div className="relative z-10 flex min-h-screen items-center justify-center p-6 lg:gap-36 lg:px-16">
