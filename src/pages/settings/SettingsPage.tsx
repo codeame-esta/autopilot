@@ -24,7 +24,11 @@ export default function SettingsPage() {
           email={data?.email}
         />
         <AppearanceCard />
-        <NotificationsCard />
+        <NotificationsCard
+          emailNotification={data?.email_notification}
+          goalReminder={data?.goal_reminder}
+          isLoading={isLoading}
+        />
         <AutopilotSettingsCard />
         <SecurityCard />
       </div>

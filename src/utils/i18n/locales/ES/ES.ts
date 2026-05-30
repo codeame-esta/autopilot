@@ -21,6 +21,60 @@ export const SpanishLanguage = {
       GOOD_MORNING: "¡Buenos días, {{user}}!",
       GOOD_AFTERNOON: "¡Buenas tardes, {{user}}!",
       GOOD_EVENING: "¡Buenas noches, {{user}}!",
+      STAT_CARDS: {
+        MONEY_SAVED: "Dinero ahorrado",
+        OPTIMIZATIONS: "Optimizaciones",
+        AUTO_ACTIONS: "Acciones automáticas",
+        ANOMALIES_DETECTED: "Anomalías detectadas",
+        VS_LAST_MONTH: "vs mes anterior",
+      },
+      CASH_FLOW: {
+        TITLE: "Flujo de caja",
+        INCOME: "Ingresos",
+        EXPENSES: "Gastos",
+        PERIOD_PLACEHOLDER: "Período",
+        PERIODS: {
+          THIS_MONTH: "Este mes",
+          LAST_MONTH: "Mes anterior",
+          THREE_MONTHS: "3 meses",
+        },
+      },
+      RECENT_ACTIONS: {
+        TITLE: "Acciones recientes",
+        VIEW_ALL: "Ver todas",
+        ACTIONS: {
+          SUBSCRIPTION_OPTIMIZED: {
+            TITLE: "Suscripción optimizada",
+            DESCRIPTION: "Ahorraste $12.90",
+          },
+          OVERSPENDING_REDUCED: {
+            TITLE: "Gasto excesivo reducido",
+            DESCRIPTION: "Ahorraste $26.40",
+          },
+          BUDGET_REALLOCATED: {
+            TITLE: "Presupuesto reasignado",
+            DESCRIPTION: "Se reasignaron $60.00 a Ahorros",
+          },
+        },
+      },
+      SPENDING_CATEGORIES: {
+        TITLE: "Principales categorías de gasto",
+        TOTAL_SPENT: "Total gastado",
+        PERIOD_PLACEHOLDER: "Período",
+        PERIODS: {
+          THIS_MONTH: "Este mes",
+          LAST_MONTH: "Mes anterior",
+          THREE_MONTHS: "3 meses",
+        },
+        CATEGORIES: {
+          HOUSING: "Vivienda",
+          FOOD_AND_DINING: "Comida y restaurantes",
+          TRANSPORT: "Transporte",
+          SHOPPING: "Compras",
+          ENTERTAINMENT: "Entretenimiento",
+          OTHERS: "Otros",
+        },
+      },
     },
     INSIGHTS: {
       TITLE: "Perspectivas",

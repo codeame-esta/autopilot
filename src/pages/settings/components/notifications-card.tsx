@@ -4,7 +4,17 @@ import { Switch } from "@/components/ui/switch";
 import { Bell } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-export default function NotificationsCard() {
+type NotificationsCardProps = {
+  emailNotification?: boolean;
+  goalReminder?: boolean;
+  isLoading?: boolean;
+};
+
+export default function NotificationsCard({
+  emailNotification,
+  goalReminder,
+  isLoading,
+}: NotificationsCardProps) {
   const { t } = useTranslation();
   return (
     <Card className="bg-card">
@@ -23,7 +33,7 @@ export default function NotificationsCard() {
               {t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.EMAIL.SUB_TITLE")}
             </p>
           </div>
-          <Switch defaultChecked />
+          <Switch checked={emailNotification} disabled={isLoading} />
         </div>
         <Separator />
         <div className="flex items-center justify-between">
@@ -33,7 +43,7 @@ export default function NotificationsCard() {
               {t("PAGES.SETTINGS.NOTIFICATIONS.FIELDS.GOAL.SUB_TITLE")}
             </p>
           </div>
-          <Switch defaultChecked />
+          <Switch checked={goalReminder} disabled={isLoading} />
         </div>
       </CardContent>
     </Card>

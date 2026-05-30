@@ -6,8 +6,8 @@ export type GetMeResponse = {
   email: string;
   profile_picture: string;
   password: null;
-  email_notification: null;
-  goal_reminder: null;
+  email_notification: boolean;
+  goal_reminder: boolean;
   provider: string;
   provider_id: null;
 };
