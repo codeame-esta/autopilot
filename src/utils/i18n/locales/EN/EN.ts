@@ -21,6 +21,60 @@ export const EnglishLanguage = {
       GOOD_MORNING: "Good morning, {{user}}!",
       GOOD_AFTERNOON: "Good afternoon, {{user}}!",
       GOOD_EVENING: "Good evening, {{user}}!",
+      STAT_CARDS: {
+        MONEY_SAVED: "Money saved",
+        OPTIMIZATIONS: "Optimizations",
+        AUTO_ACTIONS: "Auto actions",
+        ANOMALIES_DETECTED: "Anomalies detected",
+        VS_LAST_MONTH: "vs last month",
+      },
+      CASH_FLOW: {
+        TITLE: "Cash flow",
+        INCOME: "Income",
+        EXPENSES: "Expenses",
+        PERIOD_PLACEHOLDER: "Period",
+        PERIODS: {
+          THIS_MONTH: "This month",
+          LAST_MONTH: "Last month",
+          THREE_MONTHS: "3 months",
+        },
+      },
+      RECENT_ACTIONS: {
+        TITLE: "Recent actions",
+        VIEW_ALL: "View all",
+        ACTIONS: {
+          SUBSCRIPTION_OPTIMIZED: {
+            TITLE: "Subscription optimized",
+            DESCRIPTION: "You saved $12.90",
+          },
+          OVERSPENDING_REDUCED: {
+            TITLE: "Overspending reduced",
+            DESCRIPTION: "You saved $26.40",
+          },
+          BUDGET_REALLOCATED: {
+            TITLE: "Budget reallocated",
+            DESCRIPTION: "Reallocated $60.00 to Savings",
+          },
+        },
+      },
+      SPENDING_CATEGORIES: {
+        TITLE: "Top spending categories",
+        TOTAL_SPENT: "Total spent",
+        PERIOD_PLACEHOLDER: "Period",
+        PERIODS: {
+          THIS_MONTH: "This month",
+          LAST_MONTH: "Last month",
+          THREE_MONTHS: "3 months",
+        },
+        CATEGORIES: {
+          HOUSING: "Housing",
+          FOOD_AND_DINING: "Food & Dining",
+          TRANSPORT: "Transport",
+          SHOPPING: "Shopping",
+          ENTERTAINMENT: "Entertainment",
+          OTHERS: "Others",
+        },
+      },
     },
     INSIGHTS: {
       TITLE: "Insights",
