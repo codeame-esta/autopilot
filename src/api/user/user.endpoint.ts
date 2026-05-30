@@ -1,21 +1,8 @@
-import type { Endpoint } from '../api-contract';
+import { defineEndpoint } from "../api-contract";
+import type { GetMeResponse } from "./types";
 
-export const getUser = {
-  method: 'GET',
-  path: '/users/:id',
-} as const satisfies Endpoint<
-  { id: string },
-  undefined,
-  undefined,
-  { id: string; name: string }
->;
-
-export const createUser = {
-  method: 'POST',
-  path: '/users',
-} as const satisfies Endpoint<
-  undefined,
-  undefined,
-  { name: string },
-  { id: string; name: string }
->;
+export const getMe = defineEndpoint<undefined, undefined, undefined, GetMeResponse>({
+  method: "GET",
+  path: "/users/me",
+  requiresAuth: true,
+});

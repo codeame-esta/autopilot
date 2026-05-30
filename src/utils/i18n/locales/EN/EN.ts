@@ -22,6 +22,26 @@ export const EnglishLanguage = {
       GOOD_AFTERNOON: "Good afternoon, {{user}}!",
       GOOD_EVENING: "Good evening, {{user}}!",
     },
+    INSIGHTS: {
+      TITLE: "Insights",
+      DESCRIPTION: "AI-powered insights about your finances",
+    },
+    ACTIONS: {
+      TITLE: "Actions",
+      DESCRIPTION: "Automated actions taken by your autopilot",
+    },
+    TRANSACTIONS: {
+      TITLE: "Transactions",
+      DESCRIPTION: "View and manage your transaction history",
+    },
+    BUDGETS: {
+      TITLE: "Budgets",
+      DESCRIPTION: "Track and manage your spending budgets",
+    },
+    GOALS: {
+      TITLE: "Goals",
+      DESCRIPTION: "Set and track your financial goals",
+    },
     SETTINGS: {
       TITLE: "Settings",
       DESCRIPTION: "Manage your account and preferences",

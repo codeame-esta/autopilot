@@ -3,11 +3,13 @@ import ProfileCard from "./components/profile-card";
 import AppearanceCard from "./components/appearance-card";
 import NotificationsCard from "./components/notifications-card";
 import AutopilotSettingsCard from "./components/autopilot-settings-card";
-import ConnectedAccountsCard from "./components/connected-accounts-card";
 import SecurityCard from "./components/security-card";
+import { useGetMe } from "@/hooks/user";
 
 export default function SettingsPage() {
   const { t } = useTranslation();
+  const { data, isLoading } = useGetMe();
+
   return (
     <div className="space-y-6">
       <div>
@@ -15,11 +17,15 @@ export default function SettingsPage() {
         <p className="text-muted-foreground">{t("PAGES.SETTINGS.DESCRIPTION")}</p>
       </div>
       <div className="grid gap-6">
-        <ProfileCard />
+        <ProfileCard
+          isLoading={isLoading}
+          profilePicture={data?.profile_picture}
+          fullName={data?.first_name + " " + data?.last_name}
+          email={data?.email}
+        />
         <AppearanceCard />
         <NotificationsCard />
         <AutopilotSettingsCard />
-        <ConnectedAccountsCard />
         <SecurityCard />
       </div>
     </div>

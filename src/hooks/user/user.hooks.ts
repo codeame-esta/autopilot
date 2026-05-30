@@ -1,5 +1,5 @@
-import { createMutationHook, createQueryHook } from '@/api/api-hooks';
-import { createUser, getUser } from '@/api/user/user.endpoint';
+import { createQueryHook } from "@/api/api-hooks";
+import { getMe } from "@/api/user/user.endpoint";
 
-export const useGetUser = createQueryHook(getUser);
-export const useCreateUser = createMutationHook(createUser);
+export const useGetMe = createQueryHook(getMe);
+// export const useCreateUser = createMutationHook(createUser);

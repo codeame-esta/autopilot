@@ -1,13 +1,22 @@
 export type Endpoint<
-  TParams = unknown,
-  TQuery = unknown,
-  TBody = unknown,
+  TParams = undefined,
+  TQuery = undefined,
+  TBody = undefined,
   TResponse = unknown,
 > = {
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  method: "GET" | "POST" | "PUT" | "DELETE";
   path: string;
-  params?: TParams;
-  query?: TQuery;
-  body?: TBody;
-  response?: TResponse;
+  requiresAuth?: boolean;
+  _phantom?: [TParams, TQuery, TBody, TResponse];
 };
+
+export function defineEndpoint<
+  TParams = undefined,
+  TQuery = undefined,
+  TBody = undefined,
+  TResponse = unknown,
+>(
+  endpoint: Endpoint<TParams, TQuery, TBody, TResponse>,
+): Endpoint<TParams, TQuery, TBody, TResponse> {
+  return endpoint;
+}
