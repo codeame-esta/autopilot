@@ -1,5 +1,5 @@
 import AutopilotLogo from "@/assets/autopilot-logo.png";
-import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png.png";
+import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png";
 
 const features = [
   {

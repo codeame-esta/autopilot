@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router";
 import AutopilotLogo from "@/assets/autopilot-logo.png";
-import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png.png";
+import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/lib/supabase";
 
