@@ -22,6 +22,7 @@ export default function LoginPage() {
         redirectTo: import.meta.env.VITE_FRONTEND_CLIENT_URL,
       },
     });
+    setIsGoogleSignInLoading(false);
   };
   return (
     <>
