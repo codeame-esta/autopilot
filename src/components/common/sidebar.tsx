@@ -83,7 +83,7 @@ export function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 z-40 flex h-screen w-72 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
-      <div className="flex h-16 items-center gap-2 px-6 py-14">
+      <div className="flex h-16 items-center gap-2 px-6 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <img className="w-10 h-10 hidden dark:block" src={AutopilotLogo} alt="Autopilot Logo" />
           <img
@@ -99,7 +99,7 @@ export function Sidebar() {
         </div>
       </div>
 
-      <nav className="px-3 py-4 space-y-6">
+      <nav className="px-3 py-4 space-y-4">
         {navGroups.map((group) => (
           <div key={group.groupLabel}>
             <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-foreground/40 dark:text-sidebar-foreground/40">
