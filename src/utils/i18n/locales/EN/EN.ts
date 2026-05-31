@@ -82,8 +82,32 @@ export const EnglishLanguage = {
         },
       },
       AUTOPILOT_SETTINGS: {
-        TITLE: "Autopilot Settings",
-        SUB_TITLE: "Configure AI automation preferences",
+        TITLE: "Ajustes Autopilot",
+        SUB_TITLE: "Configurar las preferencias de automatización de IA",
+        FIELDS: {
+          ENABLE_AUTOPILOT: {
+            TITLE: "Enable Autopilot",
+            SUB_TITLE: "Allow AI to take actions on your behalf",
+          },
+          AUTO_OPTIMIZE_SUSCRIPTIONS: {
+            TITLE: "Auto-optimize subscriptions",
+            SUB_TITLE: "Automatically find better plans and deals",
+          },
+          BUDGET_REALLOCATION: {
+            TITLE: "Budget reallocation",
+            SUB_TITLE: "Allow automatic budget adjustments",
+          },
+          ACTION_APPROVAL_THRESHOLD: {
+            TITLE: "Action approval threshold",
+            HELPER_TEXT: "Actions below this amount will be executed automatically",
+            OPTIONS: {
+              TEN: "$10 - Approve all actions above",
+              TWENTY_FIVE: "$25 - Approve all actions above",
+              FIFTY: "$50 - Approve all actions above",
+              ONE_HUNDRED: "$100 - Approve all actions above",
+            },
+          },
+        },
       },
       SECURITY: {
         TITLE: "Security",

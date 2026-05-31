@@ -83,6 +83,30 @@ export const SpanishLanguage = {
       AUTOPILOT_SETTINGS: {
         TITLE: "Ajustes Autopilot",
         SUB_TITLE: "Configurar las preferencias de automatización de IA",
+        FIELDS: {
+          ENABLE_AUTOPILOT: {
+            TITLE: "Habilitar Autopilot",
+            SUB_TITLE: "Permita que la IA actúe en su nombre",
+          },
+          AUTO_OPTIMIZE_SUSCRIPTIONS: {
+            TITLE: "Optimización automática de suscripciones",
+            SUB_TITLE: "Encuentra automáticamente mejores planes y ofertas",
+          },
+          BUDGET_REALLOCATION: {
+            TITLE: "Reasignación presupuestaria",
+            SUB_TITLE: "Permitir ajustes automáticos del presupuesto",
+          },
+          ACTION_APPROVAL_THRESHOLD: {
+            TITLE: "Umbral de aprobación de acción",
+            HELPER_TEXT: "Las acciones inferiores a esta cantidad se ejecutarán automáticamente.",
+            OPTIONS: {
+              TEN: "$10 - Aprobar todas las acciones anteriores",
+              TWENTY_FIVE: "$25 - Aprobar todas las acciones anteriores",
+              FIFTY: "$50 - Aprobar todas las acciones anteriores",
+              ONE_HUNDRED: "$100 - Aprobar todas las acciones anteriores",
+            },
+          },
+        },
       },
       SECURITY: {
         TITLE: "Seguridad",
