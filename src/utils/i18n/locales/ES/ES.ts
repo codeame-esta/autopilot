@@ -2,6 +2,12 @@ export const SpanishLanguage = {
   COMPONENTS: {
     COMMON: {
       SIDEBAR: {
+        GROUPS: {
+          OVERVIEW: "General",
+          AUTOPILOT: "Autopilot",
+          FINANCE: "Finanzas",
+          SETTINGS: "Configuración",
+        },
         NAV_ITEMS: {
           HOME: "Inicio",
           INSIGHTS: "Perspectivas",
@@ -12,6 +18,11 @@ export const SpanishLanguage = {
           SETTINGS: "Configuración",
         },
         LOG_OUT: "Cerrar sesión",
+        PRO_BANNER: {
+          TITLE: "Pasá a Pro",
+          DESCRIPTION: "Desbloqueá acciones ilimitadas, insights avanzados y soporte prioritario.",
+          CTA: "Obtener Pro",
+        },
       },
     },
   },
@@ -87,6 +98,32 @@ export const SpanishLanguage = {
     TRANSACTIONS: {
       TITLE: "Transacciones",
       DESCRIPTION: "Visualiza y gestiona tu historial de transacciones",
+      ADD_TRANSACTION: "Agregar transacción",
+      SEARCH_PLACEHOLDER: "Buscar transacciones...",
+      FLAGGED: "Marcada",
+      FILTERS: {
+        CATEGORY: {
+          PLACEHOLDER: "Categoría",
+          ALL: "Todas las categorías",
+          SHOPPING: "Compras",
+          FOOD_AND_DINING: "Comida y restaurantes",
+          TRANSPORT: "Transporte",
+          HOUSING: "Vivienda",
+          ENTERTAINMENT: "Entretenimiento",
+        },
+        PERIOD: {
+          PLACEHOLDER: "Período",
+          THIS_MONTH: "Este mes",
+          LAST_MONTH: "Mes anterior",
+          THREE_MONTHS: "3 meses",
+          ALL_TIME: "Todo el tiempo",
+        },
+      },
+      PAGINATION: {
+        SHOWING: "Mostrando {{from}}-{{to}} de {{total}} transacciones",
+        PREVIOUS: "Anterior",
+        NEXT: "Siguiente",
+      },
     },
     BUDGETS: {
       TITLE: "Presupuestos",

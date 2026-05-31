@@ -15,41 +15,61 @@ import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/lib/supabase";
 
-const navItems = [
+const navGroups = [
   {
-    href: "/dashboard",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.HOME",
-    icon: Home,
+    groupLabel: "COMPONENTS.COMMON.SIDEBAR.GROUPS.OVERVIEW",
+    items: [
+      {
+        href: "/dashboard",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.HOME",
+        icon: Home,
+      },
+    ],
   },
   {
-    href: "/dashboard/insights",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.INSIGHTS",
-    icon: Lightbulb,
+    groupLabel: "COMPONENTS.COMMON.SIDEBAR.GROUPS.AUTOPILOT",
+    items: [
+      {
+        href: "/dashboard/insights",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.INSIGHTS",
+        icon: Lightbulb,
+      },
+      {
+        href: "/dashboard/actions",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.ACTIONS",
+        icon: Zap,
+      },
+    ],
   },
   {
-    href: "/dashboard/actions",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.ACTIONS",
-    icon: Zap,
+    groupLabel: "COMPONENTS.COMMON.SIDEBAR.GROUPS.FINANCE",
+    items: [
+      {
+        href: "/dashboard/transactions",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.TRANSACTIONS",
+        icon: ArrowLeftRight,
+      },
+      {
+        href: "/dashboard/budgets",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.BUDGETS",
+        icon: Wallet,
+      },
+      {
+        href: "/dashboard/goals",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.GOALS",
+        icon: Target,
+      },
+    ],
   },
   {
-    href: "/dashboard/transactions",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.TRANSACTIONS",
-    icon: ArrowLeftRight,
-  },
-  {
-    href: "/dashboard/budgets",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.BUDGETS",
-    icon: Wallet,
-  },
-  {
-    href: "/dashboard/goals",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.GOALS",
-    icon: Target,
-  },
-  {
-    href: "/dashboard/settings",
-    label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.SETTINGS",
-    icon: Settings,
+    groupLabel: "COMPONENTS.COMMON.SIDEBAR.GROUPS.SETTINGS",
+    items: [
+      {
+        href: "/dashboard/settings",
+        label: "COMPONENTS.COMMON.SIDEBAR.NAV_ITEMS.SETTINGS",
+        icon: Settings,
+      },
+    ],
   },
 ];
 
@@ -62,7 +82,7 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
+    <aside className="fixed left-0 top-0 z-40 flex h-screen w-72 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
       <div className="flex h-16 items-center gap-2 px-6 py-14">
         <div className="flex items-center gap-3">
           <img className="w-10 h-10 hidden dark:block" src={AutopilotLogo} alt="Autopilot Logo" />
@@ -79,29 +99,50 @@ export function Sidebar() {
         </div>
       </div>
 
-      <nav className="flex-1 space-y-1 px-3 py-4">
-        {navItems.map((item) => {
-          const isActive =
-            pathname === item.href ||
-            (item.href !== "/dashboard" && pathname.startsWith(item.href));
+      <nav className="px-3 py-4 space-y-6">
+        {navGroups.map((group) => (
+          <div key={group.groupLabel}>
+            <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-foreground/40 dark:text-sidebar-foreground/40">
+              {t(group.groupLabel)}
+            </p>
+            <div className="space-y-1">
+              {group.items.map((item) => {
+                const isActive =
+                  pathname === item.href ||
+                  (item.href !== "/dashboard" && pathname.startsWith(item.href));
 
-          return (
-            <Link
-              key={item.href}
-              to={item.href}
-              className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                isActive
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground/60 dark:text-sidebar-foreground/70 hover:bg-muted dark:hover:bg-sidebar-accent hover:text-foreground dark:hover:text-sidebar-foreground",
-              )}
-            >
-              <item.icon className="h-5 w-5" />
-              {t(item.label)}
-            </Link>
-          );
-        })}
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-foreground/8 text-foreground dark:bg-white/10 dark:text-white font-semibold"
+                        : "text-foreground/60 dark:text-sidebar-foreground/70 hover:bg-muted dark:hover:bg-sidebar-accent hover:text-foreground dark:hover:text-sidebar-foreground",
+                    )}
+                  >
+                    <item.icon className="h-5 w-5" />
+                    {t(item.label)}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
+
+      <div className="flex flex-1 items-center px-3">
+        <div className="w-full rounded-xl bg-linear-to-br from-violet-600 to-violet-400 p-4 text-white">
+          <p className="text-sm font-semibold">{t("COMPONENTS.COMMON.SIDEBAR.PRO_BANNER.TITLE")}</p>
+          <p className="mt-1 text-xs opacity-80 leading-relaxed">
+            {t("COMPONENTS.COMMON.SIDEBAR.PRO_BANNER.DESCRIPTION")}
+          </p>
+          <button className="mt-3 w-full rounded-lg bg-white/20 hover:bg-white/30 transition-colors px-3 py-1.5 text-xs font-semibold">
+            {t("COMPONENTS.COMMON.SIDEBAR.PRO_BANNER.CTA")}
+          </button>
+        </div>
+      </div>
 
       <div className="border-t border-border dark:border-sidebar-border p-3">
         <button
