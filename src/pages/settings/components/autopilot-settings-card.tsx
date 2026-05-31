@@ -10,31 +10,27 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function AutopilotSettingsCard() {
+  const { t } = useTranslation();
   return (
     <Card className="bg-card">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base">
           <Zap className="h-5 w-5" />
-          Autopilot Settings
+          {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.TITLE")}
         </CardTitle>
-        <CardDescription>Configure AI automation preferences</CardDescription>
+        <CardDescription>{t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.SUB_TITLE")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
-            <p className="font-medium">Enable Autopilot</p>
-            <p className="text-sm text-muted-foreground">Allow AI to take actions on your behalf</p>
-          </div>
-          <Switch defaultChecked />
-        </div>
-        <Separator />
-        <div className="flex items-center justify-between">
-          <div className="space-y-0.5">
-            <p className="font-medium">Auto-optimize subscriptions</p>
+            <p className="font-medium">
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILO.TITLE")}
+            </p>
             <p className="text-sm text-muted-foreground">
-              Automatically find better plans and deals
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILO.TITLE")}
             </p>
           </div>
           <Switch defaultChecked />
@@ -42,28 +38,62 @@ export default function AutopilotSettingsCard() {
         <Separator />
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
-            <p className="font-medium">Budget reallocation</p>
-            <p className="text-sm text-muted-foreground">Allow automatic budget adjustments</p>
+            <p className="font-medium">
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.AUTO_OPTIMIZE_SUSCRIPTIONS.TITLE")}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.AUTO_OPTIMIZE_SUSCRIPTIONS.SUB_TITLE")}
+            </p>
+          </div>
+          <Switch defaultChecked />
+        </div>
+        <Separator />
+        <div className="flex items-center justify-between">
+          <div className="space-y-0.5">
+            <p className="font-medium">
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.BUDGET_REALLOCATION.TITLE")}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.BUDGET_REALLOCATION.SUB_TITLE")}
+            </p>
           </div>
           <Switch />
         </div>
 
         <Separator />
         <div className="space-y-2">
-          <Label>Action approval threshold</Label>
+          <Label>
+            {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.TITLE")}
+          </Label>
           <Select defaultValue="25">
             <SelectTrigger>
               <SelectValue placeholder="Select threshold" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="10">$10 - Approve all actions above</SelectItem>
-              <SelectItem value="25">$25 - Approve all actions above</SelectItem>
-              <SelectItem value="50">$50 - Approve all actions above</SelectItem>
-              <SelectItem value="100">$100 - Approve all actions above</SelectItem>
+              <SelectItem value="10">
+                {t(
+                  "PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.OPTIONS.TEN",
+                )}
+              </SelectItem>
+              <SelectItem value="25">
+                {t(
+                  "PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.OPTIONS.TWENTY_FIVE",
+                )}
+              </SelectItem>
+              <SelectItem value="50">
+                {t(
+                  "PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.OPTIONS.FIFTY",
+                )}
+              </SelectItem>
+              <SelectItem value="100">
+                {t(
+                  "PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.OPTIONS.ONE_HUNDRED",
+                )}
+              </SelectItem>
             </SelectContent>
           </Select>
           <p className="text-xs text-muted-foreground">
-            Actions below this amount will be executed automatically
+            {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ACTION_APPROVAL_THRESHOLD.HELPER_TEXT")}
           </p>
         </div>
       </CardContent>
