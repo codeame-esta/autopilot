@@ -2,6 +2,12 @@ export const EnglishLanguage = {
   COMPONENTS: {
     COMMON: {
       SIDEBAR: {
+        GROUPS: {
+          OVERVIEW: "Overview",
+          AUTOPILOT: "Autopilot",
+          FINANCE: "Finance",
+          SETTINGS: "Settings",
+        },
         NAV_ITEMS: {
           HOME: "Home",
           INSIGHTS: "Insights",
@@ -12,6 +18,11 @@ export const EnglishLanguage = {
           SETTINGS: "Settings",
         },
         LOG_OUT: "Log Out",
+        PRO_BANNER: {
+          TITLE: "Upgrade to Pro",
+          DESCRIPTION: "Unlock unlimited actions, advanced insights and priority support.",
+          CTA: "Get Pro",
+        },
       },
     },
   },
@@ -87,6 +98,32 @@ export const EnglishLanguage = {
     TRANSACTIONS: {
       TITLE: "Transactions",
       DESCRIPTION: "View and manage your transaction history",
+      ADD_TRANSACTION: "Add transaction",
+      SEARCH_PLACEHOLDER: "Search transactions...",
+      FLAGGED: "Flagged",
+      FILTERS: {
+        CATEGORY: {
+          PLACEHOLDER: "Category",
+          ALL: "All categories",
+          SHOPPING: "Shopping",
+          FOOD_AND_DINING: "Food & Dining",
+          TRANSPORT: "Transport",
+          HOUSING: "Housing",
+          ENTERTAINMENT: "Entertainment",
+        },
+        PERIOD: {
+          PLACEHOLDER: "Period",
+          THIS_MONTH: "This month",
+          LAST_MONTH: "Last month",
+          THREE_MONTHS: "3 months",
+          ALL_TIME: "All time",
+        },
+      },
+      PAGINATION: {
+        SHOWING: "Showing {{from}}-{{to}} of {{total}} transactions",
+        PREVIOUS: "Previous",
+        NEXT: "Next",
+      },
     },
     BUDGETS: {
       TITLE: "Budgets",
