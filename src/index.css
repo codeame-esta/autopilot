@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  font-size: 90%;
+}
+
 :root {
   --background: #f2f4f7;
   --foreground: #0b0f1a;

@@ -7,6 +7,7 @@ import {
   Target,
   Settings,
   LogOut,
+  Menu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router";
@@ -14,6 +15,8 @@ import AutopilotLogo from "@/assets/autopilot-logo.png";
 import AutopilotLogoBlack from "@/assets/autopilot-logo-black-center.png";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/lib/supabase";
+import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navGroups = [
   {
@@ -76,13 +79,14 @@ const navGroups = [
 export function Sidebar() {
   const { pathname } = useLocation();
   const { t } = useTranslation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
   };
 
-  return (
-    <aside className="fixed left-0 top-0 z-40 flex h-screen w-72 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
+  const buildContent = (onLinkClick?: () => void) => (
+    <>
       <div className="flex h-16 items-center gap-2 px-6 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <img className="w-10 h-10 hidden dark:block" src={AutopilotLogo} alt="Autopilot Logo" />
@@ -115,6 +119,7 @@ export function Sidebar() {
                   <Link
                     key={item.href}
                     to={item.href}
+                    onClick={onLinkClick}
                     className={cn(
                       "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                       isActive
@@ -153,6 +158,30 @@ export function Sidebar() {
           {t("COMPONENTS.COMMON.SIDEBAR.LOG_OUT")}
         </button>
       </div>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Desktop sidebar */}
+      <aside className="hidden lg:flex fixed left-0 top-0 z-40 h-screen w-72 flex-col bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border">
+        {buildContent()}
+      </aside>
+
+      {/* Mobile drawer */}
+      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+        <SheetTrigger className="lg:hidden fixed top-3.5 left-4 z-50 inline-flex items-center justify-center rounded-lg p-2 text-foreground hover:bg-muted transition-colors">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Open menu</span>
+        </SheetTrigger>
+        <SheetContent
+          side="left"
+          showCloseButton={false}
+          className="flex flex-col p-0 data-[side=left]:w-72 bg-white dark:bg-sidebar text-foreground dark:text-sidebar-foreground border-r border-border dark:border-sidebar-border"
+        >
+          {buildContent(() => setMobileOpen(false))}
+        </SheetContent>
+      </Sheet>
+    </>
   );
 }

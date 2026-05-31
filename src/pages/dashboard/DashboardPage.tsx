@@ -17,7 +17,7 @@ export default function DashboardPage() {
         loading={isLoading}
       />
       <div className="flex items-center justify-between">
-        <div className="grid grid-cols-4 gap-4 flex-1">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
           <StatCard
             title={t("PAGES.DASHBOARD.STAT_CARDS.MONEY_SAVED")}
             value="$432.50"
@@ -46,12 +46,12 @@ export default function DashboardPage() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-3">
+      <div className="grid grid-cols-1 gap-6">
+        <div className="col-span-1">
           <CashFlowChart />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <RecentActions />
         <SpendingCategories />
       </div>
