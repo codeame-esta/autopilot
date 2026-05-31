@@ -27,10 +27,10 @@ export default function AutopilotSettingsCard() {
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
             <p className="font-medium">
-              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILO.TITLE")}
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILOT.TITLE")}
             </p>
             <p className="text-sm text-muted-foreground">
-              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILO.TITLE")}
+              {t("PAGES.SETTINGS.AUTOPILOT_SETTINGS.FIELDS.ENABLE_AUTOPILOT.SUB_TITLE")}
             </p>
           </div>
           <Switch defaultChecked />
